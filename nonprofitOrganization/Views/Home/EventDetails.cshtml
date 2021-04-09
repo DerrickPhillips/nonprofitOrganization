@@ -1,0 +1,52 @@
+﻿@model List<Event>
+@{
+    string title = "Event Form";
+    ViewBag.Title = title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<!-- Code to set up the table for the eventsDisplay page-->
+<table class="table table-bordered">
+    <tbody>
+        <!-- Code for a foreach loop that gets the selected events-->
+        @foreach (var events in Model)
+        {
+            <tr>
+                <td>Event Name:</td>
+                <td>@events.EventName</td>
+            </tr>
+            <tr>
+                <td>Event Discription:</td>
+                <td>@events.EventDescription</td>
+            </tr>
+            <tr>
+                <td>Event Date:</td>
+                <td>@events.EventDate</td>
+            </tr>
+            <tr>
+                <td>Event Location:</td>
+                <td>@events.EventLocation</td>
+            </tr>
+            <tr>
+                <td>Event Leader:</td>
+                <td>@events.EventLeader</td>
+            </tr>
+            <tr>
+                <td>Guest List:</td>
+                <td>@events.GuestList</td>
+            </tr>
+            <tr>
+                <!-- Code for the edit delete & home buttons which span the width of the table-->
+                <td colspan="2">
+                    <a asp-controller="Event" asp-action="Edit"
+                       asp-route-id="@events.EventID" class="btn btn-dark">Edit</a>
+                    <a asp-controller="Event" asp-action="Delete"
+                       asp-route-id="@events.EventID" class="btn btn-dark">Delete</a>
+                    <a asp-controller="Home" asp-action="Index"
+                       class="btn btn-dark">Home</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

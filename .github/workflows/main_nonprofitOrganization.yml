@@ -52,5 +52,5 @@ jobs:
       with:
         app-name: 'nonprofitOrganization'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2c06f91f06ce4aa79a6de371e9ee1078 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e0929f569f384bbf948e179e9fc2e4ec }}
         package: .

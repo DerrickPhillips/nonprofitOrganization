@@ -3,47 +3,42 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
 
-<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
-    <div class="form-group row">
-        <div class="col-sm-2"><label>Username:</label></div>
-        <div class="col-sm-4">
-            <input type="text" asp-for="Username"
-                   class="form-control" />
-        </div>
-        <div class="col">
-            <span asp-validation-for="Username"
-                  class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-2"><label>Password:</label></div>
-        <div class="col-sm-4">
-            <input type="password" asp-for="Password"
-                   class="form-control" />
-        </div>
-        <div class="col">
-            <span asp-validation-for="Password"
-                  class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="offset-sm-2 col-sm-4">
+<div class="container">
+    <div class="column left" style="background-color:#aaa" border-style: solid">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <h2>Member Log In</h2>
+
+        <form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
+            <label>Username:</label><br>
+            <input type="text" asp-for="Username" class="form-control" /><br>
+            <label>Password:</label><br>
+            <input type="password" asp-for="Password" class="form-control" /><br><br />
+            <input type="submit" value="Submit"><br />
+            <br />
             <input type="checkbox" title="Remember Me" asp-for="RememberMe"
                    class="form-check-inline" />
             <label asp-for="RememberMe">Remember Me</label>
-        </div>
+        </form>
     </div>
-    <div class="row">
-        <div class="offset-2 col-sm-4">
-            <button type="submit" class="btn btn-dark">Log In</button>
-        </div>
+
+    <!-- Code for the middle column of container to hold image-->
+    <div class="column middle">
+        <img style="padding-left: 10px;" src="~/images/service-to-the-community.png" width="350" height="150" alt="" />
     </div>
-    <div class="row">
-        <div class="offset-2 col-sm-4">
-            Not registered? <a asp-action="Register">Register as a new user</a>
-        </div>
+
+
+    <div class="column right" style="background-color:#bbb;">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h2>Administrator Log In</h2>
+
+        <form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
+            <label>Username:</label><br>
+            <input type="text" asp-for="Username" class="form-control" /><br>
+            <label>Password:</label><br>
+            <input type="password" asp-for="Password" class="form-control" /><br><br />
+            <input type="submit" value="Submit">
+        </form>
     </div>
-</form>
+</div>

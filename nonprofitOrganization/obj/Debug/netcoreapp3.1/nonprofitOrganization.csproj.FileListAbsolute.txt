@@ -200,3 +200,8 @@ C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganiza
 C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\CreateStaff.cshtml.g.cs
 C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Funds.cshtml.g.cs
+C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\nonprofitOrganization.csprojAssemblyReference.cache
+C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\Home\Index.cshtml.g.cs
+C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\Shared\_StaffLayout.cshtml.g.cs
+C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\_ViewImports.cshtml.g.cs
+C:\Users\derri\OneDrive\Documents\GitHub\nonprofitOrganization\nonprofitOrganization\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\_ViewStart.cshtml.g.cs

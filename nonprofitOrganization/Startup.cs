@@ -103,6 +103,12 @@ namespace nonprofitOrganization
                     areaName: "Admin",
                     pattern: "Admin/{controller=Question}/{action=Index}/{id?}");
 
+                //Code for the .MapAreaControllerRoute for the Staff area DP.
+                endpoints.MapAreaControllerRoute(
+                    name: "staff",
+                    areaName: "Staff",
+                    pattern: "Staff/{controller=Question}/{action=Index}/{id?}");
+
                 //Code for the .MapAreaControllerRoute for the Help area DP.
                 endpoints.MapAreaControllerRoute(
                     name: "help",

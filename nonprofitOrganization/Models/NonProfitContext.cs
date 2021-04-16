@@ -27,6 +27,8 @@ namespace nonprofitOrganization.Models
 
         public DbSet<News> News { get; set; }
 
+        public DbSet<User> User { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

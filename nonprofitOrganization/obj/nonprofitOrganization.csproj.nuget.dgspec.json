@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj": {}
+    "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj": {}
   },
   "projects": {
-    "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj": {
+    "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
+        "projectUniqueName": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj",
         "projectName": "nonprofitOrganization",
-        "projectPath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
+        "projectPath": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj",
         "packagesPath": "C:\\Users\\derri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\obj\\",
+        "outputPath": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,21 +50,29 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[3.1.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.13, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[3.1.14, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[3.1.13, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[3.1.13, )"
             },
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
@@ -77,10 +85,6 @@
             "MySql.Data.EntityFramework": {
               "target": "Package",
               "version": "[8.0.23, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[5.0.0-alpha.1, )"
             }
           },
           "imports": [

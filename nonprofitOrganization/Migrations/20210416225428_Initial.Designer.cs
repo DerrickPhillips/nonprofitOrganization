@@ -10,15 +10,15 @@ using nonprofitOrganization.Models;
 namespace nonprofitOrganization.Migrations
 {
     [DbContext(typeof(NonProfitContext))]
-    [Migration("20210404000100_Inital")]
-    partial class Inital
+    [Migration("20210416225428_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("ProductVersion", "3.1.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -31,18 +31,18 @@ namespace nonprofitOrganization.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
+                        .HasName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
@@ -51,28 +51,28 @@ namespace nonprofitOrganization.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "b14eb6f6-5087-410b-9197-beccd9f22b05",
+                            ConcurrencyStamp = "e7905ce7-f59b-40c6-9413-3c78a1c0e62d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "33613fa6-a3a1-4f5b-a599-ac21752d5d7d",
+                            ConcurrencyStamp = "0ee8ffd5-c439-4de6-805a-878bd858aed7",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "c801c33c-2040-4b2c-8e78-2e796fdab84d",
+                            ConcurrencyStamp = "b21919ae-3281-423d-95ca-827fffed283d",
                             Name = "Donor",
                             NormalizedName = "DONOR"
                         },
                         new
                         {
                             Id = "4",
-                            ConcurrencyStamp = "abad8dec-91b7-4f32-9e9c-f0309026cc5e",
+                            ConcurrencyStamp = "83fa9e6e-118a-4728-a9b3-04cfda7b394a",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         });
@@ -400,8 +400,8 @@ namespace nonprofitOrganization.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -424,12 +424,12 @@ namespace nonprofitOrganization.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -440,6 +440,9 @@ namespace nonprofitOrganization.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<byte[]>("ProfilePicture")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -447,8 +450,11 @@ namespace nonprofitOrganization.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.Property<int>("UsernameChangeLimit")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -458,11 +464,11 @@ namespace nonprofitOrganization.Migrations
                         .IsUnique();
 
                     b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
+                        .HasName("EmailIndex");
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
+                        .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
@@ -472,18 +478,19 @@ namespace nonprofitOrganization.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8dc59662-f846-4eaf-94eb-65c1c613a35d",
+                            ConcurrencyStamp = "983e56b8-98f1-4834-874e-cf107216d049",
                             Email = "simmonsb218569@my.gvltec.edu",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             MemberID = 1,
                             NormalizedEmail = "SIMMONSB218569@MY.GVLTEC.EDU",
                             NormalizedUserName = "ADMIN@CPT275.BEAUSANDERS.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGQuWo67JfdSx7THeTUk0ReVA7q6fE0PHRRn2khUIQl4T1F21KAQBXyARXq7lbBkAQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBXtOwtDJ2dFEhSmQxDGkOOWM+ZgsRHq+BmiJGLNz3/hRqCSi+GOrk38XP9yKihmoA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1f6e9044-38fa-4483-9e3a-7dd8ca2afe4c",
+                            SecurityStamp = "f119f06b-8b69-4ecf-b7d8-0c1f5572703a",
                             TwoFactorEnabled = false,
-                            UserName = "admin@cpt275.beausanders.org"
+                            UserName = "admin@cpt275.beausanders.org",
+                            UsernameChangeLimit = 10
                         });
                 });
 
@@ -545,8 +552,6 @@ namespace nonprofitOrganization.Migrations
                         .HasForeignKey("DonorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Donor");
                 });
 
             modelBuilder.Entity("nonprofitOrganization.Models.Fund", b =>
@@ -558,10 +563,6 @@ namespace nonprofitOrganization.Migrations
                     b.HasOne("nonprofitOrganization.Models.Member", "Member")
                         .WithMany("Funds")
                         .HasForeignKey("MemberID");
-
-                    b.Navigation("Donation");
-
-                    b.Navigation("Member");
                 });
 
             modelBuilder.Entity("nonprofitOrganization.Models.Member", b =>
@@ -569,23 +570,6 @@ namespace nonprofitOrganization.Migrations
                     b.HasOne("nonprofitOrganization.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("nonprofitOrganization.Models.Donation", b =>
-                {
-                    b.Navigation("Funds");
-                });
-
-            modelBuilder.Entity("nonprofitOrganization.Models.Donor", b =>
-                {
-                    b.Navigation("Donations");
-                });
-
-            modelBuilder.Entity("nonprofitOrganization.Models.Member", b =>
-                {
-                    b.Navigation("Funds");
                 });
 #pragma warning restore 612, 618
         }

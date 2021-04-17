@@ -2,18 +2,14 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
-@{
-    <!-- Code to enable the links below to mark the current link in the navbar as active DP.-->
-    string area = ViewContext.RouteData.Values["area"]?.ToString();
-    string action = ViewContext.RouteData.Values["action"].ToString();
-}
+
 
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
      {
         <!-- Code to show the current user name in the NavBar DP.-->
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
         </li>
 
         <!-- Code for the NavBar Logout button DP.-->
@@ -26,15 +22,14 @@
     else
     {
         <!-- Code for the Register & Login link if there is no current user signed in DP.-->
-        <li class="nav-item ml-auto @(action == "Index" && area == null ? "active" : "")">
+        <li class="nav-item ml-auto">
             <a asp-action="Register" asp-controller="Account"
                asp-area="" class="nav-link">
                 <span class="fas fa-edit"></span>&nbsp;Register
             </a>
         </li>
         <li class="nav-item ml-auto">
-            <a asp-action="Login" asp-controller="Account"
-               asp-area="" class="nav-link btn btn-link text-dark">Log In</a>
+            <a asp-area="" asp-controller="Account" asp-action="LogIn" class="nav-link btn btn-link text-dark">Log In</a>
         </li>
     }
 </ul>

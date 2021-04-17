@@ -11,35 +11,35 @@ namespace nonprofitOrganization.Migrations
                 keyColumn: "Id",
                 keyValue: "1",
                 column: "ConcurrencyStamp",
-                value: "748bfb18-ac48-416c-81a5-41cc4757b944");
+                value: "84214484-8251-4ef4-83e3-23fd0ba53e1c");
 
             migrationBuilder.UpdateData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "2",
                 column: "ConcurrencyStamp",
-                value: "de996fcd-86ad-4557-8148-a6c23357fa61");
+                value: "a0a56cbd-6411-493a-8e1d-3cb7b7a8b683");
 
             migrationBuilder.UpdateData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "3",
                 column: "ConcurrencyStamp",
-                value: "4049b0a2-2f6a-407e-a67a-8629dcb98579");
+                value: "5f2bacbd-a184-4db1-a83a-6fc4ca93f7db");
 
             migrationBuilder.UpdateData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "4",
                 column: "ConcurrencyStamp",
-                value: "65d51704-de1d-4234-aa1b-a0c431a83fda");
+                value: "e15830fa-72f4-418c-9b6e-7143c77abc95");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "1",
                 columns: new[] { "ConcurrencyStamp", "PasswordHash", "SecurityStamp" },
-                values: new object[] { "1a8acf83-c64c-421a-ade6-81cfc582e3cb", "AQAAAAEAACcQAAAAENGDJzn8SLcGIYSG0sUj8j0poHGgKayctIovs6HiQQF1PY19W+OXdggOM4C4oqxNeQ==", "f0aa1f9b-683b-47bb-8f4d-adec40d06d2e" });
+                values: new object[] { "3bdc3094-1578-4376-a33d-3b74e6d5c709", "AQAAAAEAACcQAAAAECsb3pgfpnECby7GplJkgxLPL0TOmR1DOgpnNtu6zWVTPhAm2YgM94gACodXkhVZrw==", "826bddf8-7d06-4102-815f-6a5965d58ed6" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -49,35 +49,35 @@ namespace nonprofitOrganization.Migrations
                 keyColumn: "Id",
                 keyValue: "1",
                 column: "ConcurrencyStamp",
-                value: "b14eb6f6-5087-410b-9197-beccd9f22b05");
+                value: "e7905ce7-f59b-40c6-9413-3c78a1c0e62d");
 
             migrationBuilder.UpdateData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "2",
                 column: "ConcurrencyStamp",
-                value: "33613fa6-a3a1-4f5b-a599-ac21752d5d7d");
+                value: "0ee8ffd5-c439-4de6-805a-878bd858aed7");
 
             migrationBuilder.UpdateData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "3",
                 column: "ConcurrencyStamp",
-                value: "c801c33c-2040-4b2c-8e78-2e796fdab84d");
+                value: "b21919ae-3281-423d-95ca-827fffed283d");
 
             migrationBuilder.UpdateData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
                 keyValue: "4",
                 column: "ConcurrencyStamp",
-                value: "abad8dec-91b7-4f32-9e9c-f0309026cc5e");
+                value: "83fa9e6e-118a-4728-a9b3-04cfda7b394a");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: "1",
                 columns: new[] { "ConcurrencyStamp", "PasswordHash", "SecurityStamp" },
-                values: new object[] { "8dc59662-f846-4eaf-94eb-65c1c613a35d", "AQAAAAEAACcQAAAAEGQuWo67JfdSx7THeTUk0ReVA7q6fE0PHRRn2khUIQl4T1F21KAQBXyARXq7lbBkAQ==", "1f6e9044-38fa-4483-9e3a-7dd8ca2afe4c" });
+                values: new object[] { "983e56b8-98f1-4834-874e-cf107216d049", "AQAAAAEAACcQAAAAEBXtOwtDJ2dFEhSmQxDGkOOWM+ZgsRHq+BmiJGLNz3/hRqCSi+GOrk38XP9yKihmoA==", "f119f06b-8b69-4ecf-b7d8-0c1f5572703a" });
         }
     }
 }

@@ -17,6 +17,12 @@ namespace nonprofitOrganization.Models
         public string Firstname { get; set; }
         public string Lastname { get; set; }
 
+        //Code that enables the user to be able to change Username 10 times max DP.
+        public int UsernameChangeLimit { get; set; } = 10;
+
+        //Code that enables the user to set a profile picture DP.
+        public byte[] ProfilePicture { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MemberID { get; set; }
 

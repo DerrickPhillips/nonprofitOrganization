@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -58,8 +59,10 @@ namespace nonprofitOrganization
                 options.Password.RequiredLength = 6;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
-            }).AddEntityFrameworkStores<NonProfitContext>()
-              .AddDefaultTokenProviders();
+            })
+                .AddEntityFrameworkStores<NonProfitContext>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
 
             services.Configure<CookieTempDataProviderOptions>(options => {
                 options.Cookie.IsEssential = true;
@@ -114,6 +117,9 @@ namespace nonprofitOrganization
                     name: "help",
                     areaName: "Help",
                     pattern: "Help/{controller=Help}/{action=Index}/{id?}");
+
+
+                endpoints.MapRazorPages();
 
                 endpoints.MapControllerRoute(
                     name: "default",

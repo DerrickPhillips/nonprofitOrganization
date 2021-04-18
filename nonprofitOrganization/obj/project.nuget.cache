@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RxoDX1pA7/uKRIlq828qLIqt86FM7Xp4nylqT8mYfUH0ILojzFSCxed1yOO3nvZTTVpJIU/NCsVEfrl+EWdxMA==",
+  "dgSpecHash": "vCZd5xX6t8uwWvZIyJtmP7SBNzLNeWJCMFDnS50pK0fKhVdvF/vj/Pcs6ZBfX+sIC6ZXL28c4wmm+zUXdiNJyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj",
+  "projectFilePath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\derri\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\derri\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

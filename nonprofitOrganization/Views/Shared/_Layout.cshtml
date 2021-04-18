@@ -46,14 +46,14 @@
                             <!-- Code to add links to the Admin and Staff areas if the userRole is such DP.-->
                             @if (User.IsInRole("Admin"))
                             {
-                                <li class="nav-item  ml-auto">
+                                <li class="nav-item  ml-auto" style="padding-right:20px">
                                     <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Section</a>
                                 </li>
                             }
 
                             @if (User.IsInRole("Staff"))
                             {
-                                <li class="nav-item ml-auto">
+                                <li class="nav-item ml-auto" style="padding-right:20px">
                                     <a class="nav-link text-dark" asp-area="Staff" asp-controller="Home" asp-action="Index">Staff Section</a>
                                 </li>
                             }

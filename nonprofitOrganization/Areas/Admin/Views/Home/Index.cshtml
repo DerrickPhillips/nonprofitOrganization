@@ -1,13 +1,53 @@
-﻿@{
-    ViewBag.Title = "Admin Section";
-}
+﻿@{ ViewBag.Title = "Admin Section"; }
+<style>
 
-<h3 style="text-align:center">Admin Section</h3>
+    body {
+        background-image: url('../images/double-bubble.png');
+    }
 
-<div>
-    <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff">Create New Staff Member</a>
-</div>
+    .div_hover {
+        text-decoration: none;
+        margin: 1px;
+        padding: 2px;
+        color: black;
+    }
 
-<div>
-    <a asp-area="Admin" asp-controller="Home" asp-action="Funds">See Available Funds</a>
-</div>
+        .div_hover:hover {
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+        }
+
+    #contents {
+        float: right;
+        margin-right: 100px;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+
+    <h1 style="text-align:center">Administration Management</h1><br>
+
+    <div>
+        <div style="background-color: white; border: 5px ridge black; width: 15%; padding:10px; display: inline-block; position: absolute;">
+
+            <div class="div_hover">
+                <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;New Staff Member</b></a>
+
+            </div>
+            <div class="div_hover">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Funds"><b>&nbsp;View Available Funds</b></a>
+            </div>
+
+        </div>
+
+        <div id="contents">
+            <p>Views goes here</p>
+        </div>
+
+    </div>
+</body>

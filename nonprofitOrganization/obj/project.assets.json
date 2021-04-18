@@ -1595,6 +1595,19 @@
           }
         }
       },
+      "SendGrid/9.21.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "starkbank-ecdsa": "[1.2.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
       "SSH.NET/2020.0.0-beta1": {
         "type": "package",
         "dependencies": {
@@ -1614,6 +1627,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {}
+        }
+      },
+      "starkbank-ecdsa/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -5639,6 +5661,29 @@
         "version.txt"
       ]
     },
+    "SendGrid/9.21.2": {
+      "sha512": "vYp/UPtiO9FkaziuVzoGJqmKJV4WBhN6gmryXnpL9ga/UPJH2bBmzg0As8DO75lhboORKYim8cZFdDhKVthokQ==",
+      "type": "package",
+      "path": "sendgrid/9.21.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.21.2.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
     "SSH.NET/2020.0.0-beta1": {
       "sha512": "GdgJ3eFSEXkGIror8SfxbXKJM/g0Eofm4bM6LIYANSM1foOJc640adnr1dqs2BTf/MKwL+9NqOUm3RvQm1CxtA==",
       "type": "package",
@@ -5701,6 +5746,22 @@
         "lib/wp8/SshNet.Security.Cryptography.xml",
         "sshnet.security.cryptography.1.3.0.nupkg.sha512",
         "sshnet.security.cryptography.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.2.0": {
+      "sha512": "hP53QPYOOEIR44EK9phz+DYliM6DEieDZxpb8GZzE+++qyrWqUscKcyHCC6L9yu/ehllYtqxtT4qrjWDsuQlUQ==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.2.0.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -10153,7 +10214,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.13",
       "Microsoft.Extensions.Identity.Core >= 6.0.0-preview.1.21103.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
-      "MySql.Data.EntityFramework >= 8.0.23"
+      "MySql.Data.EntityFramework >= 8.0.23",
+      "SendGrid >= 9.21.2"
     ]
   },
   "packageFolders": {
@@ -10241,6 +10303,10 @@
           "MySql.Data.EntityFramework": {
             "target": "Package",
             "version": "[8.0.23, )"
+          },
+          "SendGrid": {
+            "target": "Package",
+            "version": "[9.21.2, )"
           }
         },
         "imports": [

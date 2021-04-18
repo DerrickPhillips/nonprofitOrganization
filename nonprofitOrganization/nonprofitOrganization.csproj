@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.0-preview.1.21103.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="MySql.Data.EntityFramework" Version="8.0.23" />
+    <PackageReference Include="SendGrid" Version="9.21.2" />
   </ItemGroup>
 
   <ItemGroup>

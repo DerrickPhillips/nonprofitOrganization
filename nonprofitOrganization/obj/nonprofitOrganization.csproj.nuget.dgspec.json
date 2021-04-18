@@ -85,6 +85,10 @@
             "MySql.Data.EntityFramework": {
               "target": "Package",
               "version": "[8.0.23, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.21.2, )"
             }
           },
           "imports": [

@@ -2,39 +2,74 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-
-
 <div class="container">
-    <div class="column left" style="border-style: solid;
-        border: 9px solid #608000;
+    <div style="        border-style: solid;
+        border: 9px solid #8acbfb;
         border-radius: 20px;
-        border-top-right-radius: 0px;
         margin-top: 15px;
-        margin-top: 15px;
-        border-bottom-right-radius: 0px;
-        margin-bottom: 15px;">
+        background-color: white;">
 
         <h2 style="text-align:center"></h2>
 
 
-        <p style="text-align:center;">┌────── ∘°❉°∘ ──────┐</p>
-        <h2 style="text-align:center">Member Directory</h2>
+        <div style="padding: 20px; padding-left: 40px; padding-right: 40px;">
+            <h2 style="text-align:center;line-height: 60px"><b>Helping Entry-Level Programmers</b></h2>
+            <p style="text-align:center; font-size: 18px; line-height: 40px;">
+                <img style="padding-left: 6px; float: right; vertical-align: middle;" src="~/images/programming_img.jpg" width="390" height="240" alt="" />&emsp;
+                Codesign is here to provide and assist new programmers in learning and developing their skills. Programming is becoming a greater and greater presence as technology is growing exponentially and driving the world towards the future, and the demand for skilled programmers is rising along with it. CoDesign is built to offer support and community to those beginning their exploration in the field, to support those whom will have an astronomical part in shaping and carrying the future of technology and our lives with it
+            </p>
+        </div>
+    </div>
+</div>
 
 
-        <form action="/action_page.php" style="text-align:center">
-            <label for="firstName">First Name:</label><br>
-            <input type="text" id="fname" name="fname" value="John"><br>
-            <label for="lastName">Last Name:</label><br>
-            <input type="text" id="password" name="password" value="Doe"><br /><br />
-            <input type="submit" value="Search">
-        </form><br />
-        <p style="text-align:center;">└────── °∘❉∘° ──────┘</p><br /><br /><br />
+<div class="container">
+    <div style="        border-style: solid;
+        border: 9px solid #0094cc;
+        border-radius: 20px;
+        margin-top: 15px;
+        background-color: white;">
 
-        <div style="border: 1px solid black;">
+        <h2 style="text-align:center"></h2>
+
+
+        <div style="padding: 20px; padding-left: 40px; padding-right: 40px;">
+            <h2 style="text-align:center;line-height: 60px"><b>How You Can Help Make a Difference</b></h2>
+            <p style="text-align:center; font-size:18px; line-height: 40px;">
+                <img style="padding-left: 6px; float: left; text-align: center;" src="~/images/software_engineers.jpeg" width="300" height="210" alt="" />&emsp;
+                Funds donated to us by generous people just like you allow us to extend a helping hand to those who need it and offer resources to aid in their education in programming. Through your help and your generosity, we are able to build and maintain an open community always ready to support each other, as well as gather resources and information ready for use.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div style="        border-style: solid;
+        border: 9px solid #8acbfb;
+        border-radius: 20px;
+        margin-top: 15px;
+        background-color: white;">
+
+        <h2 style="text-align:center"></h2>
+
+        @*<p style="text-align:center;">┌────── ∘°❉°∘ ──────┐</p>
+            <h2 style="text-align:center">Member Directory</h2>
+
+
+            <form action="/action_page.php" style="text-align:center">
+                <label for="firstName">First Name:</label><br>
+                <input type="text" id="fname" name="fname" value="John"><br>
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" id="password" name="password" value="Doe"><br /><br />
+                <input type="submit" value="Search">
+            </form><br />
+            <p style="text-align:center;">└────── °∘❉∘° ──────┘</p><br /><br /><br *@
+
+        <div style="padding: 20px;">
             <p style="text-align:center;">┌────── ∘°❉°∘ ──────┐</p>
             <h2 style="text-align:center;">Quick Donations</h2>
-            <p style="text-align:center;">Pick your charity and make donations by clicking on the Donate button below.</p>
+            <p style="text-align:center;">Click the Donate button below to help <br> us support programmers across the nation.</p>
 
             <form borderstyle="text-align:center;" class="form" action="https://www.paypal.com/donate" method="post" target="_blank">
                 <input type="hidden" name="hosted_button_id" value="786ARK7KSFWW8" />
@@ -43,30 +78,4 @@
             </form> <p style="text-align:center;">└────── °∘❉∘° ──────┘</p>
         </div>
     </div>
-    <!-- Code for the middle column of container -->
-    <div class="column middle" style="        background-image: url('../images/hands.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-top: 15px;
-        border-top: 9px solid #608000;
-        border-bottom: 9px solid #608000;">
-        <img style="display: block; margin-left: auto; margin-right: auto" src="~/images/service-to-the-community.png" width="350" height="150" alt="" />
-    </div>
-
-    <!-- Code for the third column of container -->
-    <div class="column right" style="        background-color: white;
-        margin-top: 15px;
-        border-style: solid;
-        border: 9px solid #608000;
-        border-radius: 20px;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;">
-        <h2 style="text-align:center"></h2>
-
-        <h2 style="text-align:center">right div</h2>
-
-
-    </div>
 </div>
-
-

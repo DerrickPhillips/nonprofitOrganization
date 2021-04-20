@@ -65,6 +65,7 @@ namespace nonprofitOrganization.Areas.Admin.Controllers
 
                 if (result.Succeeded)
                 {
+                    // Code that sets Staff role to user that admin creates DP.
                     userManager.AddToRoleAsync(identityUser, "Staff").Wait();
                     return RedirectToAction("CreateStaff");
                 }

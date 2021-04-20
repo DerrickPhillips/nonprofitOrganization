@@ -1,9 +1,24 @@
-﻿@{ ViewBag.Title = "Admin Section"; }
+﻿@*@{
+        ViewBag.Title = "Admin Section";
+    }
+
+    <h3 style="text-align:center">Admin Section</h3>
+
+    <div>
+        <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff">Create New Staff Member</a>
+    </div>
+
+    <div>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Funds">See Available Funds</a>
+    </div>*@
+
+
+
+@{ ViewBag.Title = "Admin Section"; }
+<!-- Tim's html code for admin home page layout DP.-->
 <style>
 
-    body {
-        background-image: url('../images/double-bubble.png');
-    }
+body { background-image: url('../images/double-bubble.png'); }
 
     .div_hover {
         text-decoration: none;
@@ -36,17 +51,25 @@
         <div style="background-color: white; border: 5px ridge black; width: 15%; padding:10px; display: inline-block; position: absolute;">
 
             <div class="div_hover">
-                <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;New Staff Member</b></a>
+                <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;Add New Staff Member</b></a>
 
             </div>
             <div class="div_hover">
                 <a asp-area="Admin" asp-controller="Home" asp-action="Funds"><b>&nbsp;View Available Funds</b></a>
             </div>
 
-        </div>
+            <div class="div_hover">
+                <a asp-area="Admin" asp-controller="RoleManager" asp-action="ManageRoles"><b>&nbsp;Manage User Roles</b></a>
+            </div>
 
-        <div id="contents">
-            <p>Views goes here</p>
+            <div class="div_hover">
+                <a asp-area="Admin" asp-controller="UserRoles" asp-action="Index"><b>&nbsp;Assign User Roles</b></a>
+            </div>
+
+            <div class="div_hover">
+                <a asp-area="Admin" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
+            </div>
+
         </div>
 
     </div>

@@ -7,7 +7,6 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
      {
-        <!-- Code to show profile pic next to user name when logged in DP.-->
         <li class="nav-item" style="align-self: center;">
             @if (UserManager.GetUserAsync(User).Result.ProfilePicture != null)
              {

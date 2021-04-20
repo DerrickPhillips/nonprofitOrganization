@@ -42,6 +42,9 @@ namespace nonprofitOrganization.Controllers
 
                 if (result.Succeeded)
                 {
+                    // Code to asign the Member role to anyone who registers DP.
+                    userManager.AddToRoleAsync(user, "Member").Wait();
+
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }

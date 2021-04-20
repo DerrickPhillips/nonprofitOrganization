@@ -10,8 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="margin:0 0 0 0; width:100%">
                 <div class="container">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NonProfitOrg</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -39,9 +38,9 @@
                                 <a class="nav-link text-dark" asp-area="Help" asp-controller="Home" asp-action="Index">Help</a>
                             </li>
 
-                            <li class="nav-item">
+                            @*<li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Add">EventForm (test)</a>
-                            </li>
+                            </li>*@
 
                             <!-- Code to add links to the Admin and Staff areas if the userRole is such DP.-->
                             @if (User.IsInRole("Admin"))
@@ -61,7 +60,6 @@
                     </div>
                 </div>
             </nav>
-        </div>
     </header>
 
 

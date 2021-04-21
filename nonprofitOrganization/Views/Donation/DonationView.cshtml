@@ -3,13 +3,16 @@
     ViewData["Title"] = "Your Donations";
     Layout = "_Layout";
 }
-<h1>Previous Donations</h1>
-<table class="table table-bordered table-striped" style="width:100%">
+
+<h1 style="text-align:center">Donations</h1>
+
+<!-- Code to display donation data for Admin user DP.-->
+<table class="table table-bordered table-striped bg-white" style="width:100%">
     <thead>
         <tr>
-            <th>Type of Donation</th>
-            <th>Amount donated</th>
-            <th>Data Donated</th>
+            <th>Donation Type</th>
+            <th>Amount</th>
+            <th>Date</th>
             <th>Comments</th>
         </tr>
     </thead>
@@ -27,4 +30,4 @@
 </table>
 <br />
 
-<a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-dark">Go Back</a>
+<a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-dark">Back</a>

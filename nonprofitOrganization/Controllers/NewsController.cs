@@ -20,15 +20,13 @@ namespace nonprofitOrganization.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Administrator, Volunteer")]
-        // GET: NewsAndEvents
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.News.ToListAsync());
         }
 
-        [Authorize(Roles = "Administrator, Volunteer")]
-        // GET: NewsAndEvents/Details/5
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
@@ -36,14 +34,15 @@ namespace nonprofitOrganization.Controllers
                 return NotFound();
             }
 
-            var newsAndEvents = await _context.News
-                .FirstOrDefaultAsync(m => m.NewsID == id);
-            if (newsAndEvents == null)
+            var news = await _context.News
+            .FirstOrDefaultAsync(m => m.NewsID == id);
+
+            if (news == null)
             {
                 return NotFound();
             }
 
-            return View(newsAndEvents);
+            return View(news);
         }
 
         public async Task<IActionResult> SingleView(long? id)
@@ -53,27 +52,27 @@ namespace nonprofitOrganization.Controllers
                 return NotFound();
             }
 
-            var newsAndEvents = await _context.News
-                .FirstOrDefaultAsync(m => m.NewsID == id);
-            if (newsAndEvents == null)
+            var news = await _context.News
+            .FirstOrDefaultAsync(m => m.NewsID == id);
+
+            if (news == null)
             {
                 return NotFound();
             }
 
-            return View(newsAndEvents);
+            return View(news);
         }
 
-        [Authorize(Roles = "Administrator, Volunteer")]
-        // GET: NewsAndEvents/Create
+        [Authorize(Roles = "Admin, Staff")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: NewsAndEvents/Create
-        [Authorize(Roles = "Administrator, Volunteer")]
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Create([Bind("Id,DatePosted,Author,Title,Body")] News news)
         {
             news.DatePosted = DateTime.Now;
@@ -87,8 +86,7 @@ namespace nonprofitOrganization.Controllers
             return View(news);
         }
 
-        // GET: NewsAndEvents/Edit/5
-        [Authorize(Roles = "Administrator, Volunteer")]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
@@ -96,18 +94,17 @@ namespace nonprofitOrganization.Controllers
                 return NotFound();
             }
 
-            var newsAndEvents = await _context.News.FindAsync(id);
-            if (newsAndEvents == null)
+            var news = await _context.News.FindAsync(id);
+            if (news == null)
             {
                 return NotFound();
             }
-            return View(newsAndEvents);
+            return View(news);
         }
 
-        // POST: NewsAndEvents/Edit/5
-        [Authorize(Roles = "Administrator, Volunteer")]
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Edit(long id, [Bind("Id,DatePosted,Author,Title,Body")] News news)
         {
             if (id != news.NewsID)
@@ -124,7 +121,7 @@ namespace nonprofitOrganization.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!NewsAndEventsExists(news.NewsID))
+                    if (!News(news.NewsID))
                     {
                         return NotFound();
                     }
@@ -138,8 +135,8 @@ namespace nonprofitOrganization.Controllers
             return View(news);
         }
 
-        // GET: NewsAndEvents/Delete/5
-        [Authorize(Roles = "Administrator, Volunteer")]
+
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
@@ -147,29 +144,28 @@ namespace nonprofitOrganization.Controllers
                 return NotFound();
             }
 
-            var newsAndEvents = await _context.News
+            var news = await _context.News
                 .FirstOrDefaultAsync(m => m.NewsID == id);
-            if (newsAndEvents == null)
+            if (news == null)
             {
                 return NotFound();
             }
 
-            return View(newsAndEvents);
+            return View(news);
         }
 
-        [Authorize(Roles = "Administrator, Volunteer")]
-        // POST: NewsAndEvents/Delete/5
-        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var newsAndEvents = await _context.News.FindAsync(id);
-            _context.News.Remove(newsAndEvents);
+            var news = await _context.News.FindAsync(id);
+            _context.News.Remove(news);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool NewsAndEventsExists(long id)
+        private bool News(long id)
         {
             return _context.News.Any(e => e.NewsID == id);
         }

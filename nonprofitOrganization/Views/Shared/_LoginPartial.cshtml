@@ -7,6 +7,7 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
      {
+        // Code to set the profile picture DP.
         <li class="nav-item" style="align-self: center;">
             @if (UserManager.GetUserAsync(User).Result.ProfilePicture != null)
              {
@@ -16,13 +17,13 @@
 
         <!-- Code to show the current user name in the NavBar DP.-->
         <li class="nav-item">
-            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
         </li>
 
         <!-- Code for the NavBar Logout button DP.-->
         <li class="nav-item">
             <form class="form-inline" asp-area="" method="post" asp-action="LogOut" asp-controller="Account">
-                <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
             </form>
         </li>
      }
@@ -30,11 +31,12 @@
     {
         <!-- Code for the Register & Login link if there is no current user signed in DP.-->
         <li class="nav-item ml-auto">
-            <a asp-action="Register" asp-controller="Account" asp-area="" class="nav-link btn btn-link text-white">
-                <span class="fas fa-edit"></span>&nbsp;Register </a>
+            <a asp-area="Identity" asp-page="/Account/Register" class="nav-link">
+                <span class="fas fa-edit"></span>&nbsp;Register
+            </a>
         </li>
         <li class="nav-item ml-auto">
-            <a asp-area="" asp-controller="Account" asp-action="LogIn" class="nav-link btn btn-link text-white">Log In</a>
+            <a asp-area="" asp-controller="Account" asp-action="LogIn" class="nav-link btn btn-link text-dark">Log In</a>
         </li>
     }
 </ul>

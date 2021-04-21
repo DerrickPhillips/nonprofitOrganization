@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using nonprofitOrganization.Models;
+using nonprofitOrganization.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

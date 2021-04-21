@@ -8,7 +8,7 @@ using nonprofitOrganization.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace nonprofitOrganization.Models
+namespace nonprofitOrganization.Data
 {
     public class NonProfitContext : IdentityDbContext<User>
     {
@@ -21,7 +21,7 @@ namespace nonprofitOrganization.Models
 
         public DbSet<Donation> Donations { get; set; }
 
-        public DbSet<Fund> Funds { get; set; }
+        public DbSet<DonationType> DonationTypes { get; set; }
 
         public DbSet<Member> Members { get; set; }
 
@@ -68,6 +68,41 @@ namespace nonprofitOrganization.Models
                 }
                 );
 
+            modelBuilder.Entity<DonationType>().HasData(
+                new DonationType
+                {
+                    TypeID = 1,
+                    Type = "Anonymous",
+                    Description = "Help out CodeSign anonymously!"
+                },
+
+                new DonationType
+                {
+                    TypeID = 2,
+                    Type = "Accredited",
+                    Description = "Be recognized for helping out CodeSign!"
+                }
+                );
+
+            modelBuilder.Entity<Donor>().HasData(
+                new Donor
+                {
+                    DonorID = 1,
+                    Address = "250 Derrick Ln",
+                    Phone = "864-547-7310",
+                    Email = "derrickrphillips@yahoo.com",
+                    ContactPreference = "Email"
+                },
+                new Donor
+                {
+                    DonorID = 2,
+                    Address = "107 Landcaster St",
+                    Phone = "864-243-5402",
+                    Email = "nanny@yahoo.com",
+                    ContactPreference = "Phone"
+                }
+                );
+
             // Code to setup Mr.Sanders admin user account DP.
             var hasher = new PasswordHasher<User>();
             modelBuilder.Entity<User>(
@@ -93,7 +128,7 @@ namespace nonprofitOrganization.Models
                     }
                     );
                 });
-                 
+
 
             modelBuilder.Entity<IdentityUserRole<string>>().HasData(
                 new IdentityUserRole<string>

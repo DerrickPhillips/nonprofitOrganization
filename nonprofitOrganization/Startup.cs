@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using nonprofitOrganization.Models;
+using nonprofitOrganization.Data;
 
 
 namespace nonprofitOrganization

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<nonprofitOrganization.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Posted News</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-success text-dark">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePosted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsTitle)
+            </th>
+            <th class="mobile-friendly-index">
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatePosted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewsAuthor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewsTitle)
+                </td>
+                <td class="mobile-friendly-index">
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.NewsID">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.NewsID">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.NewsID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

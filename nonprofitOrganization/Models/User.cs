@@ -26,8 +26,6 @@ namespace nonprofitOrganization.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MemberID { get; set; }
 
-        //public List<Member> Members { get; set; }
-
         [NotMapped]
         public IList<string> RoleNames { get; set; }
 

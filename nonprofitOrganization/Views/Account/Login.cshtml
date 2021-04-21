@@ -3,18 +3,42 @@
     ViewBag.Title = "Login";
 }
 
-<h2><strong>Log In</strong></h2><br />
 
-<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container">
+    <div class="column left" style="background-color:#aaa" border-style: solid">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
-    <label>Username:</label><br>
-    <input type="text" asp-for="Username" class="form-control" /><br>
-    <label>Password:</label><br>
-    <input type="password" asp-for="Password" class="form-control" /><br><br />
-    <input type="submit" value="Submit"><br />
-    <br />
-    <input type="checkbox" title="Remember Me" asp-for="RememberMe"
-            class="form-check-inline" />
-    <label asp-for="RememberMe">Remember Me</label>
-</form>
+        <h2>Member Log In</h2>
+
+        <form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
+            <label>Username:</label><br>
+            <input type="text" asp-for="Username" class="form-control" /><br>
+            <label>Password:</label><br>
+            <input type="password" asp-for="Password" class="form-control" /><br><br />
+            <input type="submit" value="Submit"><br />
+            <br />
+            <input type="checkbox" title="Remember Me" asp-for="RememberMe"
+                   class="form-check-inline" />
+            <label asp-for="RememberMe">Remember Me</label>
+        </form>
+    </div>
+
+    <!-- Code for the middle column of container to hold image-->
+    <div class="column middle">
+        <img style="padding-left: 10px;" src="~/images/service-to-the-community.png" width="350" height="150" alt="" />
+    </div>
+
+
+    <div class="column right" style="background-color:#bbb;">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h2>Administrator Log In</h2>
+
+        <form method="post" asp-action="LogIn" asp-route-returnUrl="@Model.ReturnUrl">
+            <label>Username:</label><br>
+            <input type="text" asp-for="Username" class="form-control" /><br>
+            <label>Password:</label><br>
+            <input type="password" asp-for="Password" class="form-control" /><br><br />
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>

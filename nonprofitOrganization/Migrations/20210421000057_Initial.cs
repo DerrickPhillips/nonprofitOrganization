@@ -54,6 +54,20 @@ namespace nonprofitOrganization.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DonationTypes",
+                columns: table => new
+                {
+                    TypeID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Type = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DonationTypes", x => x.TypeID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Donors",
                 columns: table => new
                 {
@@ -243,50 +257,31 @@ namespace nonprofitOrganization.Migrations
                 name: "Donations",
                 columns: table => new
                 {
-                    DonationID = table.Column<int>(nullable: false)
+                    UniqueId = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(nullable: true),
+                    TypeID = table.Column<int>(nullable: false),
+                    DonationID = table.Column<int>(nullable: false),
+                    Amount = table.Column<double>(nullable: false),
                     DateDonated = table.Column<DateTime>(nullable: false),
                     Comments = table.Column<string>(nullable: true),
-                    DonorID = table.Column<int>(nullable: false),
-                    Amount = table.Column<double>(nullable: false)
+                    DonorID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Donations", x => x.DonationID);
+                    table.PrimaryKey("PK_Donations", x => x.UniqueId);
                     table.ForeignKey(
                         name: "FK_Donations_Donors_DonorID",
                         column: x => x.DonorID,
                         principalTable: "Donors",
                         principalColumn: "DonorID",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Funds",
-                columns: table => new
-                {
-                    FundID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Amount = table.Column<double>(nullable: false),
-                    DonationID = table.Column<int>(nullable: true),
-                    Dues = table.Column<double>(nullable: false),
-                    MemberID = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Funds", x => x.FundID);
                     table.ForeignKey(
-                        name: "FK_Funds_Donations_DonationID",
-                        column: x => x.DonationID,
-                        principalTable: "Donations",
-                        principalColumn: "DonationID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Funds_Members_MemberID",
-                        column: x => x.MemberID,
-                        principalTable: "Members",
-                        principalColumn: "MemberID",
-                        onDelete: ReferentialAction.Restrict);
+                        name: "FK_Donations_DonationTypes_TypeID",
+                        column: x => x.TypeID,
+                        principalTable: "DonationTypes",
+                        principalColumn: "TypeID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -294,16 +289,34 @@ namespace nonprofitOrganization.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1", "e7905ce7-f59b-40c6-9413-3c78a1c0e62d", "Admin", "ADMIN" },
-                    { "2", "0ee8ffd5-c439-4de6-805a-878bd858aed7", "Member", "MEMBER" },
-                    { "3", "b21919ae-3281-423d-95ca-827fffed283d", "Donor", "DONOR" },
-                    { "4", "83fa9e6e-118a-4728-a9b3-04cfda7b394a", "Staff", "STAFF" }
+                    { "1", "410af307-05fc-40c7-9258-847ffb5f72ff", "Admin", "ADMIN" },
+                    { "2", "a4706d82-d7db-49b3-8810-71f02e36037d", "Member", "MEMBER" },
+                    { "3", "ef06ac23-6015-414b-8bfc-4089b876abf4", "Donor", "DONOR" },
+                    { "4", "07bd6820-fe59-40da-b1ec-9341523c430c", "Staff", "STAFF" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "Firstname", "Lastname", "LockoutEnabled", "LockoutEnd", "MemberID", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName", "UsernameChangeLimit" },
-                values: new object[] { "1", 0, "983e56b8-98f1-4834-874e-cf107216d049", "simmonsb218569@my.gvltec.edu", true, null, null, false, null, 1, "SIMMONSB218569@MY.GVLTEC.EDU", "ADMIN@CPT275.BEAUSANDERS.ORG", "AQAAAAEAACcQAAAAEBXtOwtDJ2dFEhSmQxDGkOOWM+ZgsRHq+BmiJGLNz3/hRqCSi+GOrk38XP9yKihmoA==", null, false, null, "f119f06b-8b69-4ecf-b7d8-0c1f5572703a", false, "admin@cpt275.beausanders.org", 10 });
+                values: new object[] { "1", 0, "e7fae812-deee-46ff-a2d4-1e5d80d3f0a1", "simmonsb218569@my.gvltec.edu", true, null, null, false, null, 1, "SIMMONSB218569@MY.GVLTEC.EDU", "ADMIN@CPT275.BEAUSANDERS.ORG", "AQAAAAEAACcQAAAAEBEWF59t+k3irHvUM6J0vuXjYjuNvZZYPOuhOm1GwY5vyF/i/Db9jB24bPxK9iXPGg==", null, false, null, "d1f9d4e2-9fc7-46a5-b106-abf61cc25d47", false, "admin@cpt275.beausanders.org", 10 });
+
+            migrationBuilder.InsertData(
+                table: "DonationTypes",
+                columns: new[] { "TypeID", "Description", "Type" },
+                values: new object[,]
+                {
+                    { 1, "Help out CodeSign anonymously!", "Anonymous" },
+                    { 2, "Be recognized for helping out CodeSign!", "Accredited" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Donors",
+                columns: new[] { "DonorID", "Address", "ContactPreference", "Email", "Phone" },
+                values: new object[,]
+                {
+                    { 1, "250 Derrick Ln", "Email", "derrickrphillips@yahoo.com", "864-547-7310" },
+                    { 2, "107 Landcaster St", "Phone", "nanny@yahoo.com", "864-243-5402" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -361,14 +374,9 @@ namespace nonprofitOrganization.Migrations
                 column: "DonorID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Funds_DonationID",
-                table: "Funds",
-                column: "DonationID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Funds_MemberID",
-                table: "Funds",
-                column: "MemberID");
+                name: "IX_Donations_TypeID",
+                table: "Donations",
+                column: "TypeID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Members_UserId",
@@ -394,10 +402,13 @@ namespace nonprofitOrganization.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Donations");
+
+            migrationBuilder.DropTable(
                 name: "Events");
 
             migrationBuilder.DropTable(
-                name: "Funds");
+                name: "Members");
 
             migrationBuilder.DropTable(
                 name: "News");
@@ -406,13 +417,10 @@ namespace nonprofitOrganization.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Donations");
-
-            migrationBuilder.DropTable(
-                name: "Members");
-
-            migrationBuilder.DropTable(
                 name: "Donors");
+
+            migrationBuilder.DropTable(
+                name: "DonationTypes");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

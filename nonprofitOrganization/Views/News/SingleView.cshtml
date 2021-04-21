@@ -1,0 +1,15 @@
+﻿@model nonprofitOrganization.Models.News
+
+@{
+    ViewData["Title"] = "News and Events";
+}
+
+
+<h2 class="Post-Title">@Html.DisplayFor(model => model.NewsTitle)</h2>
+<h3 class="Post-Info">@Html.DisplayFor(model => model.NewsAuthor)</h3>
+<h3 class="Post-Info">@Html.DisplayFor(model => model.DatePosted)</h3>
+<p>@Html.DisplayFor(model => model.Body)</p>
+<hr />
+<div>
+    <a asp-action="ViewLatest" class="View-More font-weight-bold">Back to News and Events</a>
+</div>

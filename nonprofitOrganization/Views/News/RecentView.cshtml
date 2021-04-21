@@ -1,0 +1,19 @@
+﻿@model IEnumerable<nonprofitOrganization.Models.News>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="detailed-background">
+    <h2 class="title-class">Recent News</h2>
+    <hr />
+    @foreach (var item in Model)
+     {
+        <h2 class="Post-Title">@Html.DisplayFor(modelItem => item.NewsTitle)</h2>
+        <h3 class="Post-Info">@Html.DisplayFor(modelItem => item.NewsAuthor)</h3>
+        <h3 class="Post-Info">@Html.DisplayFor(modelItem => item.DatePosted)</h3>
+        <p>@Html.DisplayFor(modelItem => item.Body)</p>
+        <a href="~/NewsAndEvents/SingleView/@Html.DisplayFor(modelItem => item.NewsID)" class="View-More font-weight-bold">View More</a>
+        <hr />
+     }
+</div>

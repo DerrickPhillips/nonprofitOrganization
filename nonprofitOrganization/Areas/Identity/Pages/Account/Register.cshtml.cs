@@ -81,10 +81,20 @@ namespace nonprofitOrganization.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = Input.Email, Email = Input.Email };
+                var user = new User 
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Firstname = Input.FirstName,
+                    Lastname = Input.LastName
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

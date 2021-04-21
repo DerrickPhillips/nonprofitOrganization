@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using nonprofitOrganization.Models;
+using nonprofitOrganization.Data;
 
 namespace nonprofitOrganization.Migrations
 {
     [DbContext(typeof(NonProfitContext))]
-    [Migration("20210416225428_Initial")]
+    [Migration("20210421000057_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,28 +51,28 @@ namespace nonprofitOrganization.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "e7905ce7-f59b-40c6-9413-3c78a1c0e62d",
+                            ConcurrencyStamp = "410af307-05fc-40c7-9258-847ffb5f72ff",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "0ee8ffd5-c439-4de6-805a-878bd858aed7",
+                            ConcurrencyStamp = "a4706d82-d7db-49b3-8810-71f02e36037d",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = "3",
-                            ConcurrencyStamp = "b21919ae-3281-423d-95ca-827fffed283d",
+                            ConcurrencyStamp = "ef06ac23-6015-414b-8bfc-4089b876abf4",
                             Name = "Donor",
                             NormalizedName = "DONOR"
                         },
                         new
                         {
                             Id = "4",
-                            ConcurrencyStamp = "83fa9e6e-118a-4728-a9b3-04cfda7b394a",
+                            ConcurrencyStamp = "07bd6820-fe59-40da-b1ec-9341523c430c",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         });
@@ -191,9 +191,9 @@ namespace nonprofitOrganization.Migrations
 
             modelBuilder.Entity("nonprofitOrganization.Models.Donation", b =>
                 {
-                    b.Property<int>("DonationID")
+                    b.Property<long>("UniqueId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Amount")
@@ -205,14 +205,57 @@ namespace nonprofitOrganization.Migrations
                     b.Property<DateTime>("DateDonated")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DonationID")
+                        .HasColumnType("int");
+
                     b.Property<int>("DonorID")
                         .HasColumnType("int");
 
-                    b.HasKey("DonationID");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TypeID")
+                        .HasColumnType("int");
+
+                    b.HasKey("UniqueId");
 
                     b.HasIndex("DonorID");
 
+                    b.HasIndex("TypeID");
+
                     b.ToTable("Donations");
+                });
+
+            modelBuilder.Entity("nonprofitOrganization.Models.DonationType", b =>
+                {
+                    b.Property<int>("TypeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TypeID");
+
+                    b.ToTable("DonationTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            TypeID = 1,
+                            Description = "Help out CodeSign anonymously!",
+                            Type = "Anonymous"
+                        },
+                        new
+                        {
+                            TypeID = 2,
+                            Description = "Be recognized for helping out CodeSign!",
+                            Type = "Accredited"
+                        });
                 });
 
             modelBuilder.Entity("nonprofitOrganization.Models.Donor", b =>
@@ -237,6 +280,24 @@ namespace nonprofitOrganization.Migrations
                     b.HasKey("DonorID");
 
                     b.ToTable("Donors");
+
+                    b.HasData(
+                        new
+                        {
+                            DonorID = 1,
+                            Address = "250 Derrick Ln",
+                            ContactPreference = "Email",
+                            Email = "derrickrphillips@yahoo.com",
+                            Phone = "864-547-7310"
+                        },
+                        new
+                        {
+                            DonorID = 2,
+                            Address = "107 Landcaster St",
+                            ContactPreference = "Phone",
+                            Email = "nanny@yahoo.com",
+                            Phone = "864-243-5402"
+                        });
                 });
 
             modelBuilder.Entity("nonprofitOrganization.Models.Event", b =>
@@ -276,34 +337,6 @@ namespace nonprofitOrganization.Migrations
                     b.HasKey("EventID");
 
                     b.ToTable("Events");
-                });
-
-            modelBuilder.Entity("nonprofitOrganization.Models.Fund", b =>
-                {
-                    b.Property<int>("FundID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
-
-                    b.Property<int?>("DonationID")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Dues")
-                        .HasColumnType("float");
-
-                    b.Property<string>("MemberID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("FundID");
-
-                    b.HasIndex("DonationID");
-
-                    b.HasIndex("MemberID");
-
-                    b.ToTable("Funds");
                 });
 
             modelBuilder.Entity("nonprofitOrganization.Models.Member", b =>
@@ -478,16 +511,16 @@ namespace nonprofitOrganization.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "983e56b8-98f1-4834-874e-cf107216d049",
+                            ConcurrencyStamp = "e7fae812-deee-46ff-a2d4-1e5d80d3f0a1",
                             Email = "simmonsb218569@my.gvltec.edu",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             MemberID = 1,
                             NormalizedEmail = "SIMMONSB218569@MY.GVLTEC.EDU",
                             NormalizedUserName = "ADMIN@CPT275.BEAUSANDERS.ORG",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBXtOwtDJ2dFEhSmQxDGkOOWM+ZgsRHq+BmiJGLNz3/hRqCSi+GOrk38XP9yKihmoA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBEWF59t+k3irHvUM6J0vuXjYjuNvZZYPOuhOm1GwY5vyF/i/Db9jB24bPxK9iXPGg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f119f06b-8b69-4ecf-b7d8-0c1f5572703a",
+                            SecurityStamp = "d1f9d4e2-9fc7-46a5-b106-abf61cc25d47",
                             TwoFactorEnabled = false,
                             UserName = "admin@cpt275.beausanders.org",
                             UsernameChangeLimit = 10
@@ -548,21 +581,16 @@ namespace nonprofitOrganization.Migrations
             modelBuilder.Entity("nonprofitOrganization.Models.Donation", b =>
                 {
                     b.HasOne("nonprofitOrganization.Models.Donor", "Donor")
-                        .WithMany("Donations")
+                        .WithMany()
                         .HasForeignKey("DonorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("nonprofitOrganization.Models.Fund", b =>
-                {
-                    b.HasOne("nonprofitOrganization.Models.Donation", "Donation")
-                        .WithMany("Funds")
-                        .HasForeignKey("DonationID");
-
-                    b.HasOne("nonprofitOrganization.Models.Member", "Member")
-                        .WithMany("Funds")
-                        .HasForeignKey("MemberID");
+                    b.HasOne("nonprofitOrganization.Models.DonationType", "DonationType")
+                        .WithMany()
+                        .HasForeignKey("TypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("nonprofitOrganization.Models.Member", b =>

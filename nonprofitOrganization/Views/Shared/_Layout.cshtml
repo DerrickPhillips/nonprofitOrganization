@@ -1,66 +1,73 @@
-﻿<!DOCTYPE html>
+﻿@*Code to allow this view to access AspNetCore.Identity DP*@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Codesign</title>
+    <title>@ViewData["Title"] - nonprofitOrganization</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/codesign.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img style="padding-left: 6px; float: right; vertical-align: middle;" src="~/images/Codesign logo.png" width="125" height="62" alt="" /></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <!-- Code to call the _loginPartial view for additional NavBar item DP.-->
-                        <partial name="_LoginPartial" />
-                        <ul class="navbar-nav flex-grow-1">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="margin:0 0 0 0; width:100%">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NonProfitOrg</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <!-- Code to call the _loginPartial view for additional NavBar item DP.-->
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="RecentView">News</a>
+                        </li>
+                        <!-- Code to allow signed in user to donate DP.-->
+                        @if (SignInManager.IsSignedIn(User))
+                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Donation" asp-action="Index">Donate</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Events">Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="contact">Contact Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="About">About</a>
-                            </li>
+                         }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="Help" asp-controller="Home" asp-action="Index">Help</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Help" asp-controller="Home" asp-action="Index">Help</a>
+                        </li>
+
+
+                        <!-- Code to add links to the Admin and Staff areas if the userRole is such DP.-->
+                        @if (User.IsInRole("Admin"))
+                         {
+                            <li class="nav-item  ml-auto" style="padding-right:20px">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Section</a>
                             </li>
+                         }
 
-                            @*<li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Event" asp-action="Add">EventForm (test)</a>
-                            </li>*@
-
-                            <!-- Code to add links to the Admin and Staff areas if the userRole is such DP.-->
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <li class="nav-item  ml-auto" style="padding-right:20px">
-                                    <a class="nav-link text-white" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Section</a>
-                                </li>
-                            }
-
-                            @if (User.IsInRole("Staff"))
-                            {
-                                <li class="nav-item ml-auto" style="padding-right:20px">
-                                    <a class="nav-link text-white" asp-area="Staff" asp-controller="Home" asp-action="Index">Staff Section</a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
+                        @if (User.IsInRole("Staff"))
+                         {
+                            <li class="nav-item ml-auto" style="padding-right:20px">
+                                <a class="nav-link text-dark" asp-area="Staff" asp-controller="Home" asp-action="Index">Staff Section</a>
+                            </li>
+                         }
+                    </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
 

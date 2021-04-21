@@ -9,20 +9,22 @@ namespace nonprofitOrganization.Models
 {
     public class Donation
     {
-        // Code for the Donation fields DP.
-
         [Key]
+        public Int64 UniqueId { get; set; }
+
+        // Code for the foreign key field DP.
+        [ForeignKey("DonationId")]
+        public string Id { get; set; }
+
+        // Code for the foreign key field DP.
+        [ForeignKey("DonationType")]
+        public int TypeID { get; set; }
+        public DonationType DonationType { get; set; }
+
+        [Required(ErrorMessage = "Please make sure you have fill out the amount field and have selected a type of donation")]
         public int DonationID { get; set; }
 
-        public DateTime DateDonated { get; set; }
-
-        public string Comments { get; set; }
-
-        [ForeignKey("DonorID")] // Passing in the name of the foreign key prooperty DP.
-        public int DonorID { get; set; }
-        public Donor Donor { get; set; }
-
-        [Range(0, 10000, ErrorMessage = "Please enter an amount")]
+        [Range(0, 10000, ErrorMessage = "Please fill the Amount textbox")]
         [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Numbers only")]
         public double Amount { get; set; }
 
@@ -49,6 +51,12 @@ namespace nonprofitOrganization.Models
         [NotMapped]
         public bool ValidCard { get; set; }
 
-        public List<Fund> Funds { get; set; }
+        public DateTime DateDonated { get; set; }
+
+        public string Comments { get; set; }
+
+        public int DonorID { get; set; }
+
+        public Donor Donor { get; set; }
     }
 }

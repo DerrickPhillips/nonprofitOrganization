@@ -43,6 +43,5 @@ namespace nonprofitOrganization.Models
         [Required]
         public string ContactPref { get; set; }
 
-        public List<Fund> Funds { get; set; }
     }
 }

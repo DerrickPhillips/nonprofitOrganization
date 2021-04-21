@@ -27,7 +27,7 @@ using nonprofitOrganization.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9dae607c79aab6e1a2aac8869f324fe63c1628e5", @"/Views/News/RecentView.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dd81f7adc913432bc5e19cc61c5639df8128b488", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4bb6fc4ccef7e32a0b9d9b82b71e2b4915d8b896", @"/Views/_ViewImports.cshtml")]
     public class Views_News_RecentView : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<nonprofitOrganization.Models.News>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("View-More font-weight-bold"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

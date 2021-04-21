@@ -27,7 +27,7 @@ using nonprofitOrganization.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ee5ff97bb8f0bbb46d6289bd5516f18f8422d1f2", @"/Views/News/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dd81f7adc913432bc5e19cc61c5639df8128b488", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4bb6fc4ccef7e32a0b9d9b82b71e2b4915d8b896", @"/Views/_ViewImports.cshtml")]
     public class Views_News_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<nonprofitOrganization.Models.News>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

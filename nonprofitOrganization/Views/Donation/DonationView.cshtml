@@ -4,30 +4,32 @@
     Layout = "_Layout";
 }
 
-<h1 style="text-align:center">Donations</h1>
 
-<!-- Code to display donation data for Admin user DP.-->
-<table class="table table-bordered table-striped bg-white" style="width:100%">
-    <thead>
-        <tr>
-            <th>Donation Type</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Comments</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Donation donation in Model)
-        {
+<div class="container" style="border-style: solid; border: 9px solid #0094cc; border-radius: 20px;margin-top: 15px; background-color: white;">
+    <h1 style="text-align:center; margin-top: 1rem; margin-bottom: 1rem;">Donations</h1>
+    <!-- Code to display donation data for Admin user DP.-->
+    <table class="table table-bordered table-striped bg-white" style="width:100%">
+        <thead>
             <tr>
-                <td>@donation.DonationType.Type</td>
-                <td>$@donation.Amount</td>
-                <td>@donation.DateDonated</td>
-                <td>@donation.Comments</td>
+                <th>Donation Type</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Comments</th>
             </tr>
-        }
-    </tbody>
-</table>
-<br />
+        </thead>
+        <tbody>
+            @foreach (Donation donation in Model)
+            {
+                <tr>
+                    <td>@donation.DonationType.Type</td>
+                    <td>$@donation.Amount</td>
+                    <td>@donation.DateDonated</td>
+                    <td>@donation.Comments</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+</div>
 
-<a asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-dark">Back</a>
+<a style="margin-top: 2rem" asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-dark">Back</a>

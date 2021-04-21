@@ -9856,11 +9856,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj",
+      "projectUniqueName": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
       "projectName": "nonprofitOrganization",
-      "projectPath": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj",
+      "projectPath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
       "packagesPath": "C:\\Users\\derri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\obj\\",
+      "outputPath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

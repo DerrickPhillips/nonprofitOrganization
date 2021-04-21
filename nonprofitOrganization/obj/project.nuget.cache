@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Wc36jG12yF3ptw6ITIkOpCDgrwJfGtlNCgzHg/MEJLcH5MY8ik8m5i3JtxdUzPatBLL9S1a0RVS+HtWlScjAQA==",
+  "dgSpecHash": "5abA/UeFdZFQgB6TpNBPdTkozB5Fa7fL9QPLCfVIfN/y/k32f3PSduvWm0B9AJi5rryP+ydcbV1xnyjaQROt5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\derri\\OneDrive\\Desktop\\nonprofitOrganization-main\\nonprofitOrganization-main\\nonprofitOrganization\\nonprofitOrganization.csproj",
+  "projectFilePath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\derri\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\derri\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

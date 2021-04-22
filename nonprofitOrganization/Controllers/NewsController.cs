@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using nonprofitOrganization.Data;
 
-namespace nonprofitOrganization.Controllers
+namespace nonprofitOrganization.Models
 {
     public class NewsController : Controller
     {

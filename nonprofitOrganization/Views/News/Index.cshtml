@@ -4,51 +4,55 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Posted News</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-outline-success text-dark">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DatePosted)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NewsAuthor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NewsTitle)
-            </th>
-            <th class="mobile-friendly-index">
-                @Html.DisplayNameFor(model => model.Body)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<!-- Code for the News Index View Form DP.-->
+<div class="text-center" style="border-style: solid; border: 9px solid #0094cc; border-radius: 20px;margin-top: 15px; background-color: white; padding-bottom: 1rem">
+    <h1 style="margin-top: 1rem; margin-bottom: 1rem">News</h1>
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DatePosted)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NewsAuthor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NewsTitle)
-                </td>
-                <td class="mobile-friendly-index">
-                    @Html.DisplayFor(modelItem => item.Body)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.NewsID">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.NewsID">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.NewsID">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.DatePosted)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsAuthor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsTitle)
+                </th>
+                <th class="mobile-friendly-index">
+                    @Html.DisplayNameFor(model => model.Body)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DatePosted)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsAuthor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsTitle)
+                    </td>
+                    <td class="mobile-friendly-index">
+                        @Html.DisplayFor(modelItem => item.Body)
+                    </td>
+                    <!-- Inline Code to set last table row colum to align buttons vertical DP.-->
+                    <td class="btn-group-vertical">
+                        <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@item.NewsID">Edit</a>
+                        <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.NewsID">Details</a>
+                        <a class="btn btn-dark btn-sm" asp-action="Delete" asp-route-id="@item.NewsID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Create" class="btn btn-dark">Create New</a>
+    <a href='javascript:history.go(-1)' class="btn btn-dark">Cancel</a>
+</div>
+
+

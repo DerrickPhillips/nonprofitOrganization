@@ -15,7 +15,7 @@ namespace nonprofitOrganization.Models
 
         public string NewsAuthor { get; set; }
 
-        [Required(ErrorMessage = "Please enter a title for the News Story")]
+        //[Required(ErrorMessage = "Please enter a title for the News Story")]
         public string NewsTitle { get; set; }
 
         [Required(ErrorMessage = "Must enter text for the News Story")]

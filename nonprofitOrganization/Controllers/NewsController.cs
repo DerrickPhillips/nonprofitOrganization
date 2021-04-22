@@ -73,7 +73,7 @@ namespace nonprofitOrganization.Models
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> Create([Bind("Id,DatePosted,Author,Title,Body")] News news)
+        public async Task<IActionResult> Create([Bind("Id,DatePosted,NewsAuthor,NewsTitle,Body")] News news)
         {
             news.DatePosted = DateTime.Now;
 

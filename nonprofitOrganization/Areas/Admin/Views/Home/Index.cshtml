@@ -1,20 +1,5 @@
-﻿@*@{
-        ViewBag.Title = "Admin Section";
-    }
+﻿@{ ViewBag.Title = "Admin Section"; }
 
-    <h3 style="text-align:center">Admin Section</h3>
-
-    <div>
-        <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff">Create New Staff Member</a>
-    </div>
-
-    <div>
-        <a asp-area="Admin" asp-controller="Home" asp-action="Funds">See Available Funds</a>
-    </div>*@
-
-
-
-@{ ViewBag.Title = "Admin Section"; }
 <!-- Tim's html code for admin home page layout DP.-->
 <style>
 
@@ -44,37 +29,37 @@ body { background-image: url('../images/double-bubble.png'); }
     }
 </style>
 <body>
+    <div class="container" style="border-style: solid; border: 9px solid #0094cc; border-radius: 20px;margin-top: 15px; background-color: white;">
+        <h1 style="text-align:center; margin-top: 1rem; margin-bottom: 1rem">Administration Management</h1><br>
+        <div>
+            <div style="background-color: white; border: 5px ridge black; width: 15%; padding:10px; display: inline-block; margin-bottom: 2rem">
 
-    <h1 style="text-align:center">Administration Management</h1><br>
+                <div class="div_hover">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;Add New Staff Member</b></a>
 
-    <div>
-        <div style="background-color: white; border: 5px ridge black; width: 15%; padding:10px; display: inline-block; position: absolute;">
+                </div>
+                <div class="div_hover">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Funds"><b>&nbsp;View Available Funds</b></a>
+                </div>
 
-            <div class="div_hover">
-                <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;Add New Staff Member</b></a>
+                <div class="div_hover">
+                    <a asp-area="Admin" asp-controller="RoleManager" asp-action="ManageRoles"><b>&nbsp;Manage User Roles</b></a>
+                </div>
 
-            </div>
-            <div class="div_hover">
-                <a asp-area="Admin" asp-controller="Home" asp-action="Funds"><b>&nbsp;View Available Funds</b></a>
-            </div>
+                <div class="div_hover">
+                    <a asp-area="Admin" asp-controller="UserRoles" asp-action="Index"><b>&nbsp;Assign User Roles</b></a>
+                </div>
 
-            <div class="div_hover">
-                <a asp-area="Admin" asp-controller="RoleManager" asp-action="ManageRoles"><b>&nbsp;Manage User Roles</b></a>
-            </div>
+                <div class="div_hover">
+                    <a asp-area="Admin" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
+                </div>
 
-            <div class="div_hover">
-                <a asp-area="Admin" asp-controller="UserRoles" asp-action="Index"><b>&nbsp;Assign User Roles</b></a>
-            </div>
+                <div class="div_hover">
+                    <a asp-area="" asp-controller="Donation" asp-action="DonationView"><b>&nbsp;View Donations</b></a>
+                </div>
 
-            <div class="div_hover">
-                <a asp-area="Admin" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
-            </div>
-
-            <div class="div_hover">
-                <a asp-area="" asp-controller="Donation" asp-action="DonationView"><b>&nbsp;View Donations</b></a>
             </div>
 
         </div>
-
-    </div>
+    </div>  
 </body>

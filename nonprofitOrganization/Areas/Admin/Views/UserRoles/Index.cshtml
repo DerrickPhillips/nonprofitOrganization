@@ -4,29 +4,34 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>User Roles</h1>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Roles</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model)
-        {
+
+<div class="container" style="border-style: solid; border: 9px solid #0094cc; border-radius: 20px;margin-top: 15px; background-color: white;">
+    <h1 style="text-align:center; margin-top: 1rem; margin-bottom: 1rem">User Roles</h1>
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@user.Firstname</td>
-                <td>@user.Lastname</td>
-                <td>@user.Email</td>
-                <td>@string.Join(" , ", user.Roles.ToList())</td>
-                <td>
-                    <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Manage Roles</a>
-                </td>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Action</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Firstname</td>
+                    <td>@user.Lastname</td>
+                    <td>@user.Email</td>
+                    <td>@string.Join(" , ", user.Roles.ToList())</td>
+                    <td>
+                        <a class="btn btn-dark" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Manage Roles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a style="margin-top: 1rem; margin-bottom: 2rem" asp-area="Admin" asp-controller="Home" asp-action="Index" class="btn btn-dark">Back</a>
+</div>
+

@@ -20,14 +20,15 @@ namespace nonprofitOrganization.Models
             _context = context;
         }
 
+
         [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.News.ToListAsync());
         }
 
-        [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> Details(long? id)
+
+        public async Task<IActionResult> SingleView(int? id)
         {
             if (id == null)
             {
@@ -45,23 +46,6 @@ namespace nonprofitOrganization.Models
             return View(news);
         }
 
-        public async Task<IActionResult> SingleView(long? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var news = await _context.News
-            .FirstOrDefaultAsync(m => m.NewsID == id);
-
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return View(news);
-        }
 
         [Authorize(Roles = "Admin, Staff")]
         public IActionResult Create()
@@ -73,7 +57,7 @@ namespace nonprofitOrganization.Models
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> Create([Bind("Id,DatePosted,NewsAuthor,NewsTitle,Body")] News news)
+        public async Task<IActionResult> Create([Bind("NewsID,DatePosted,NewsAuthor,NewsTitle,Body")] News news)
         {
             news.DatePosted = DateTime.Now;
 
@@ -86,8 +70,9 @@ namespace nonprofitOrganization.Models
             return View(news);
         }
 
+
         [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> Edit(long? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -102,10 +87,11 @@ namespace nonprofitOrganization.Models
             return View(news);
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,DatePosted,Author,Title,Body")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("NewsID,DatePosted,NewsAuthor,NewsTitle,Body")] News news)
         {
             if (id != news.NewsID)
             {
@@ -137,7 +123,7 @@ namespace nonprofitOrganization.Models
 
 
         [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> Delete(long? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -145,7 +131,8 @@ namespace nonprofitOrganization.Models
             }
 
             var news = await _context.News
-                .FirstOrDefaultAsync(m => m.NewsID == id);
+            .FirstOrDefaultAsync(m => m.NewsID == id);
+
             if (news == null)
             {
                 return NotFound();
@@ -157,7 +144,7 @@ namespace nonprofitOrganization.Models
         [ValidateAntiForgeryToken]
         [HttpPost, ActionName("Delete")]
         [Authorize(Roles = "Admin, Staff")]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
             var news = await _context.News.FindAsync(id);
             _context.News.Remove(news);
@@ -165,7 +152,7 @@ namespace nonprofitOrganization.Models
             return RedirectToAction(nameof(Index));
         }
 
-        private bool News(long id)
+        private bool News(int? id)
         {
             return _context.News.Any(e => e.NewsID == id);
         }

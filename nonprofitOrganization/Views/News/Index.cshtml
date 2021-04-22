@@ -44,7 +44,6 @@
                     <!-- Inline Code to set last table row colum to align buttons vertical DP.-->
                     <td class="btn-group-vertical">
                         <a class="btn btn-dark btn-sm" asp-action="Edit" asp-route-id="@item.NewsID">Edit</a>
-                        <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.NewsID">Details</a>
                         <a class="btn btn-dark btn-sm" asp-action="Delete" asp-route-id="@item.NewsID">Delete</a>
                     </td>
                 </tr>
@@ -52,7 +51,7 @@
         </tbody>
     </table>
     <a asp-action="Create" class="btn btn-dark">Create New</a>
-    <a href='javascript:history.go(-1)' class="btn btn-dark">Cancel</a>
+    <a href='javascript:history.go(-1)' class="btn btn-dark">Back</a>
 </div>
 
 

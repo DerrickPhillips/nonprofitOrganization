@@ -1,15 +1,17 @@
 ﻿@model nonprofitOrganization.Models.News
 
 @{
-    ViewData["Title"] = "News and Events";
+    ViewData["Title"] = "News";
 }
 
-
-<h2 class="Post-Title">@Html.DisplayFor(model => model.NewsTitle)</h2>
-<h3 class="Post-Info">@Html.DisplayFor(model => model.NewsAuthor)</h3>
-<h3 class="Post-Info">@Html.DisplayFor(model => model.DatePosted)</h3>
-<p>@Html.DisplayFor(model => model.Body)</p>
-<hr />
-<div>
-    <a asp-action="ViewLatest" class="View-More font-weight-bold">Back to News and Events</a>
+<div class="text-center" style="border-style: solid; border: 9px solid #0094cc; border-radius: 20px;margin-top: 15px; background-color: white; padding-bottom: 1rem">
+    <h2 class="Post-Title">Title: @Html.DisplayFor(model => model.NewsTitle)</h2>
+    <h3 class="Post-Info">Author: @Html.DisplayFor(model => model.NewsAuthor)</h3>
+    <h3 class="Post-Info">Date: @Html.DisplayFor(model => model.DatePosted)</h3>
+    <p>@Html.DisplayFor(model => model.Body)</p>
+    <hr />
+    <div>
+        <a class="btn btn-dark btn-sm" asp-action="RecentView" >Back</a>
+    </div>
 </div>
+

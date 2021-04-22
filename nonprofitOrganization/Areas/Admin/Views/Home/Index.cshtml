@@ -35,32 +35,32 @@ body { background-image: url('../images/double-bubble.png'); }
             <div style="background-color: white; border: 5px ridge black; width: 15%; padding:10px; display: inline-block; margin-bottom: 2rem">
 
                 <div class="div_hover">
-                    <a asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;Add New Staff Member</b></a>
-
-                </div>
-                <div class="div_hover">
-                    <a asp-area="Admin" asp-controller="Home" asp-action="Funds"><b>&nbsp;View Available Funds</b></a>
+                    <a class="btn btn-dark" asp-area="Admin" asp-controller="Home" asp-action="CreateStaff"><b>&nbsp;Add New Staff Member</b></a>
                 </div>
 
                 <div class="div_hover">
-                    <a asp-area="Admin" asp-controller="RoleManager" asp-action="ManageRoles"><b>&nbsp;Manage User Roles</b></a>
+                    <a class="btn btn-dark" asp-area="Admin" asp-controller="RoleManager" asp-action="ManageRoles"><b>&nbsp;Manage User Roles</b></a>
                 </div>
 
                 <div class="div_hover">
-                    <a asp-area="Admin" asp-controller="UserRoles" asp-action="Index"><b>&nbsp;Assign User Roles</b></a>
+                    <a class="btn btn-dark" asp-area="Admin" asp-controller="UserRoles" asp-action="Index"><b>&nbsp;Assign User Roles</b></a>
                 </div>
 
                 <div class="div_hover">
-                    <a asp-area="Admin" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
+                    <a class="btn btn-dark" asp-area="Admin" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
                 </div>
 
                 <div class="div_hover">
-                    <a asp-area="" asp-controller="Donation" asp-action="DonationView"><b>&nbsp;View Donations</b></a>
+                    <a class="btn btn-dark" asp-area="" asp-controller="Donation" asp-action="DonationView"><b>&nbsp;View Donations</b></a>
                 </div>
 
                 <div class="div_hover">
-                    <a asp-area="" asp-controller="News" asp-action="Index"><b>&nbsp;News</b></a>
+                    <a class="btn btn-dark" asp-area="" asp-controller="News" asp-action="Index"><b>&nbsp;Manage News</b></a>
                 </div>
+
+                @*<div class="div_hover">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Funds"><b>&nbsp;Funds</b></a>
+                </div>*@
 
             </div>
 

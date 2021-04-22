@@ -9,12 +9,13 @@
     <h2 class="title-class" style="text-align:center; margin-top: 1rem">News</h2>
     <hr />
     @foreach (var item in Model)
-     {
+    {
         <h2 class="Post-Title">Title: @Html.DisplayFor(modelItem => item.NewsTitle)</h2>
         <h3 class="Post-Info">Author: @Html.DisplayFor(modelItem => item.NewsAuthor)</h3>
         <h3 class="Post-Info">Date: @Html.DisplayFor(modelItem => item.DatePosted)</h3>
         <p>@Html.DisplayFor(modelItem => item.Body)</p>
-        <a href="~/News/SingleView/@Html.DisplayFor(modelItem => item.NewsID)" class="View-More font-weight-bold">View More</a>
+        <a href="~/News/SingleView/@Html.DisplayFor(modelItem => item.NewsID)" style="color:black">View More</a>
         <hr />
-     }
+    }
+    <a class="btn btn-dark" asp-area="" asp-controller="Home" asp-action="Index">Back</a>
 </div>

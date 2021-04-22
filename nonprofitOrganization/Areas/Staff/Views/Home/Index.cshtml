@@ -2,8 +2,13 @@
     ViewBag.Title = "Staff Section";
 }
 
-<h3 style="text-align:center">Staff Section</h3>
-
-<div>
-    <a asp-area="Staff" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
+<div class="container" style="border-style: solid; border: 9px solid #0094cc; border-radius: 20px;margin-top: 15px; background-color: white; padding-bottom: 1rem">
+    <h3 style="text-align:center; margin-top: 1rem">Staff Section</h3>
+    <div>
+        <a class="btn btn-dark" asp-area="Staff" asp-controller="Event" asp-action="Add"><b>&nbsp;Add An Event</b></a>
+    </div>
+    <div style="margin-top: 1rem">
+        <a class="btn btn-dark" asp-area="" asp-controller="News" asp-action="Index"><b>&nbsp;News</b></a>
+    </div>
 </div>
+

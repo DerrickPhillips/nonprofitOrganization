@@ -50,8 +50,16 @@
             }
         </tbody>
     </table>
+    <!-- Code to enable both Admin & Staff roles to go back to their area's Home Index View due to shared controller DP.-->
     <a asp-action="Create" class="btn btn-dark">Create New</a>
-    <a href='javascript:history.go(-1)' class="btn btn-dark">Back</a>
+    @if (User.IsInRole("Staff"))
+    {
+        <a class="btn btn-dark" asp-area="Staff" asp-controller="Home" asp-action="Index">Back</a>
+    }
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Back</a>
+    }
 </div>
 
 

@@ -8,6 +8,7 @@ namespace nonprofitOrganization.Services
 {
     public class EmailSender : IEmailSender
     {
+
         public EmailSender(IOptions<AuthMessageSenderOptions> optionsAccessor)
         {
             Options = optionsAccessor.Value;
@@ -25,7 +26,7 @@ namespace nonprofitOrganization.Services
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("simmonsb218569@my.gvltec.edu", Options.SendGridUser),
+                From = new EmailAddress("phillipsdr@my.gvltec.edu", Options.SendGridUser),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message

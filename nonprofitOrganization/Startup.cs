@@ -15,7 +15,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using nonprofitOrganization.Models;
 using nonprofitOrganization.Data;
-
+using nonprofitOrganization.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace nonprofitOrganization
 {
@@ -33,7 +34,7 @@ namespace nonprofitOrganization
         {
             services.AddControllersWithViews();
 
-            //Code to enable a database setup using NuGet and Context Class
+            // Code to enable a database setup using NuGet and Context Class DP.
             services.AddDbContext<NonProfitContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("NonProfitContext"),
@@ -45,16 +46,16 @@ namespace nonprofitOrganization
             
 
 
-            //Code to enable AddRouting
+            // Code to enable AddRouting DP.
             services.AddRouting(options =>
             {
-                //Code for Lowercase addresses and a trailing slash
+                //Code for Lowercase addresses and a trailing slash DP.
                 options.LowercaseUrls = true;
                 options.AppendTrailingSlash = true;
             }
             );
 
-            //Code to configure password options
+            //Code to configure password options DP.
             services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 6;
@@ -71,9 +72,14 @@ namespace nonprofitOrganization
 
             services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 
+
             services.AddMemoryCache();
             services.AddSession();
             services.AddMvc();
+
+            // Code for using SendGrid as Email host DP.
+            //services.AddTransient<IEmailSender, EmailSender>();
+            //services.Configure<AuthMessageSenderOptions>(Configuration);
 
         }
 

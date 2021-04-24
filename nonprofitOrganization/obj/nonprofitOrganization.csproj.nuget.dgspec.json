@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj": {}
+    "C:\\Users\\gavin\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj": {}
   },
   "projects": {
-    "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj": {
+    "C:\\Users\\gavin\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
+        "projectUniqueName": "C:\\Users\\gavin\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
         "projectName": "nonprofitOrganization",
-        "projectPath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
-        "packagesPath": "C:\\Users\\derri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\derri\\OneDrive\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\obj\\",
+        "projectPath": "C:\\Users\\gavin\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\nonprofitOrganization.csproj",
+        "packagesPath": "C:\\Users\\gavin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gavin\\Documents\\GitHub\\nonprofitOrganization\\nonprofitOrganization\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\derri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\gavin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
